@@ -1,9 +1,6 @@
-import * as dotenv from "dotenv";
 import { Configuration, OpenAIApi } from "openai";
 
 import { fetchPullRequestDetails } from "./fetchPullRequestDetails.mjs";
-
-dotenv.config();
 
 const oaConfig = new Configuration({
   organization: process.env.OPENAI_ORG_ID,
