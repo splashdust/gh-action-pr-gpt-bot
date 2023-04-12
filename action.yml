@@ -12,5 +12,14 @@ inputs:
     description: "OpenAI Organization ID"
     required: true
 runs:
-  using: "node16"
-  main: "index.mjs"
+  using: "composite"
+  steps:
+    - name: Install dependencies
+      run: npm ci
+      shell: bash
+    - name: Run action
+      run: node index.js
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+        OPENAI_API_KEY: ${{ inputs.openaiApiKey }}
