@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate pull request summary
-        uses: splashdust/gh-action-pr-gpt-bot@1.0.0-beta.8
+        uses: splashdust/gh-action-pr-gpt-bot@1.0.0-beta.9
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           openaiApiKey: ${{ secrets.OPENAI_API_KEY }}
