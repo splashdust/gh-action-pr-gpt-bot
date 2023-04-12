@@ -13,4 +13,4 @@ inputs:
     required: true
 runs:
   using: "node16"
-  main: "generateSummary.mjs"
+  main: "index.mjs"
