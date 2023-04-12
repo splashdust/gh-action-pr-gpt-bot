@@ -1,6 +1,6 @@
 {
   "name": "api-lab",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Generate summary for pull requests using OpenAI API",
   "main": "index.mjs",
   "type": "module",
@@ -10,10 +10,8 @@
   "author": "Joacim Magnusson <joacim@isogram.se>",
   "license": "ISC",
   "dependencies": {
-    "@octokit/core": "^4.2.0",
     "@octokit/graphql": "^5.0.5",
     "@octokit/rest": "^19.0.7",
-    "dotenv": "^16.0.3",
     "openai": "^3.2.1"
   }
 }

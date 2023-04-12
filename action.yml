@@ -8,6 +8,9 @@ inputs:
   openaiApiKey:
     description: "OpenAI API key"
     required: true
+  openaiOrgId:
+    description: "OpenAI Organization ID"
+    required: true
 runs:
   using: "node18"
   main: "generateSummary.mjs"

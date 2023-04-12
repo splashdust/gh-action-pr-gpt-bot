@@ -23,24 +23,28 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate pull request summary
-        uses: splashdust/gh-action-pr-gpt-bot@v1
+        uses: splashdust/gh-action-pr-gpt-bot@1.0.0-beta.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           openaiApiKey: ${{ secrets.OPENAI_API_KEY }}
+          openaiOrgID: ${{ secrets.OPENAI_ORG_ID }}
 ```
 
 ### Inputs
 
-| Name           | Description    | Required |
-| -------------- | -------------- | -------- |
-| `token`        | GitHub token   | Yes      |
-| `openaiApiKey` | OpenAI API key | Yes      |
+| Name           | Description            | Required |
+| -------------- | ---------------------- | -------- |
+| `token`        | GitHub token           | Yes      |
+| `openaiApiKey` | OpenAI API key         | Yes      |
+| `openaiOrgId`  | OpenAI Organization ID | Yes      |
 
 ### Secrets
 
 The action requires the following secrets:
 
 - `OPENAI_API_KEY`: Your OpenAI API key. You can obtain one by signing up for an API key at [https://beta.openai.com/signup](https://beta.openai.com/signup).
+
+- `OPENAI_ORG_ID`: Your OpenAI Organization ID.
 
 ## Contributing
 

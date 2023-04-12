@@ -6,7 +6,7 @@ import { fetchPullRequestDetails } from "./fetchPullRequestDetails.mjs";
 dotenv.config();
 
 const oaConfig = new Configuration({
-  organization: process.env.OPENAI_ORGANIZATION,
+  organization: process.env.OPENAI_ORG_ID,
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(oaConfig);
