@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+import yj from "yieldable-json";
 
 import { fetchPullRequestDetails } from "./fetchPullRequestDetails.mjs";
 
@@ -12,7 +13,7 @@ const openai = new OpenAIApi(oaConfig);
   const token = process.env.GITHUB_TOKEN;
   console.log("context: ", process.env.GITHUB_CONTEXT);
 
-  const ghctx = JSON.parse(process.env.GITHUB_CONTEXT);
+  const ghctx = await yj.parseAsync(process.env.GITHUB_CONTEXT);
   console.log("parsed context: ", ghctx);
 
   const owner = ghctx.repository_owner;
