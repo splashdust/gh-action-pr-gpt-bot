@@ -13,7 +13,7 @@ const openai = new OpenAIApi(oaConfig);
 
   const gh_event = JSON.parse(process.env.GITHUB_EVENT);
 
-  console.log(gh_event.number);
+  console.log({ ...gh_event });
 
   const owner = "";
   const pullRequestNumber = gh_event.number;
