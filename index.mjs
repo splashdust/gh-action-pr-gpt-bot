@@ -11,11 +11,11 @@ const openai = new OpenAIApi(oaConfig);
 
 (async () => {
   const token = process.env.GITHUB_TOKEN;
-  const ghctx = await parseJson(process.env.GITHUB_CONTEXT);
+  //const ghctx = await parseJson(process.env.GITHUB_CONTEXT);
 
-  const owner = ghctx.repository_owner;
-  const pullRequestNumber = ghctx.event.number;
-  const repoName = ghctx.event.base.repo.name;
+  const owner = "";
+  const pullRequestNumber = process.env.GITHUB_PR;
+  const repoName = "";
 
   const pullRequestDetails = await fetchPullRequestDetails(
     token,
