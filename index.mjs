@@ -10,6 +10,7 @@ const openai = new OpenAIApi(oaConfig);
 
 const token = process.env.GITHUB_TOKEN;
 const context = JSON.parse(process.env.GITHUB_CONTEXT);
+console.log(context);
 const {
   repository_owner: owner,
   event: {
