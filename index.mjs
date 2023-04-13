@@ -11,10 +11,7 @@ const openai = new OpenAIApi(oaConfig);
 
 (async () => {
   const token = process.env.GITHUB_TOKEN;
-  console.log("context: ", process.env.GITHUB_CONTEXT);
-
   const ghctx = await parseJson(process.env.GITHUB_CONTEXT);
-  console.log("parsed context: ", ghctx);
 
   const owner = ghctx.repository_owner;
   const pullRequestNumber = ghctx.event.number;
@@ -42,6 +39,7 @@ async function parseJson(jsonString) {
         reject(err);
       } else {
         resolve(data);
+        console.log(data.event);
       }
     });
   });
