@@ -13,7 +13,7 @@ const context = JSON.parse(process.env.GITHUB_CONTEXT);
 const {
   repository_owner: owner,
   event: {
-    number,
+    number: pullRequestNumber,
     base: {
       repo: { name: repoName },
     },
@@ -25,7 +25,7 @@ const {
     token,
     owner,
     repoName,
-    number
+    pullRequestNumber
   );
 
   if (pullRequestDetails) {
