@@ -11,11 +11,9 @@ const openai = new OpenAIApi(oaConfig);
 (async () => {
   const token = process.env.GITHUB_TOKEN;
 
-  console.log(process.env.GITHUB_EVENT);
-
   const gh_event = JSON.parse(process.env.GITHUB_EVENT);
 
-  console.log(gh_event);
+  console.log(gh_event.number);
 
   const owner = "";
   const pullRequestNumber = gh_event.number;
