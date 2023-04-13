@@ -62,7 +62,7 @@ async function generateSummary(prompt) {
       temperature: 0.7,
     });
 
-    const summary = response.data.choices;
+    const summary = response.data.choices[0].text;
     return summary;
   } catch (error) {
     console.error("Error generating summary:", error.response.data);
