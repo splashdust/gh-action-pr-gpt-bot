@@ -13,8 +13,10 @@ const {
   repository_owner: owner,
   event: {
     number: pullRequestNumber,
-    base: {
-      repo: { name: repoName },
+    pull_request: {
+      base: {
+        repo: { name: repoName },
+      },
     },
   },
 } = JSON.parse(process.env.GITHUB_CONTEXT);
@@ -32,6 +34,14 @@ const {
     const summary = await generateSummary(prompt);
 
     console.log("Summary:", summary);
+
+    createPullRequestComment(
+      token,
+      owner,
+      repoName,
+      pullRequestNumber,
+      `Hey there, thank you for opening a pull request! I've created a short summary of what I think this PR chenges:\n\n${summary}`
+    );
   }
 })();
 
