@@ -39,7 +39,7 @@ async function parseJson(jsonString) {
         reject(err);
       } else {
         resolve(data);
-        console.log(data.event);
+        console.log(data);
       }
     });
   });
