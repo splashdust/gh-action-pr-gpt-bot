@@ -13,7 +13,7 @@ const openai = new OpenAIApi(oaConfig);
   const token = process.env.GITHUB_TOKEN;
   console.log("context: ", process.env.GITHUB_CONTEXT);
 
-  const ghctx = await yj.parseAsync(process.env.GITHUB_CONTEXT);
+  const ghctx = await parseJson(process.env.GITHUB_CONTEXT);
   console.log("parsed context: ", ghctx);
 
   const owner = ghctx.repository_owner;
@@ -34,6 +34,18 @@ const openai = new OpenAIApi(oaConfig);
     console.log("Summary:", summary);
   }
 })();
+
+async function parseJson(jsonString) {
+  return new Promise((resolve, reject) => {
+    yj.parseAsync(jsonString, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+}
 
 /**
  * Call OpenAI API to generate a summary
