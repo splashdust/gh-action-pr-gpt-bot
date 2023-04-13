@@ -2,6 +2,7 @@
 
 set -e
 
+cd /
 ls -la
 
 node .
