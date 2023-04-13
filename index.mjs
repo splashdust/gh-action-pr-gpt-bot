@@ -1,5 +1,4 @@
 import { Configuration, OpenAIApi } from "openai";
-import yj from "yieldable-json";
 
 import { fetchPullRequestDetails } from "./fetchPullRequestDetails.mjs";
 
