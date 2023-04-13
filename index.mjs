@@ -11,7 +11,10 @@ const openai = new OpenAIApi(oaConfig);
 
 (async () => {
   const token = process.env.GITHUB_TOKEN;
-  const gh_event = await parseJson(process.env.GITHUB_EVENT);
+
+  console.log(process.env.GITHUB_EVENT);
+
+  const gh_event = JSON.parse(process.env.GITHUB_EVENT);
 
   console.log(gh_event);
 
@@ -33,19 +36,6 @@ const openai = new OpenAIApi(oaConfig);
     console.log("Summary:", summary);
   }
 })();
-
-async function parseJson(jsonString) {
-  return new Promise((resolve, reject) => {
-    yj.parseAsync(jsonString, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-        console.log(data);
-      }
-    });
-  });
-}
 
 /**
  * Call OpenAI API to generate a summary
