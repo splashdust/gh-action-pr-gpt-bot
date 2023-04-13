@@ -2,4 +2,6 @@
 
 set -e
 
+ls -la
+
 node .

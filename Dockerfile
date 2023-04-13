@@ -1,6 +1,4 @@
-FROM node:18
-
-WORKDIR /action
+FROM node:lts
 
 COPY package*.json ./
 RUN npm ci
@@ -9,4 +7,4 @@ COPY . .
 
 RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["/action/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
