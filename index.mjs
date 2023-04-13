@@ -41,7 +41,7 @@ const {
       owner,
       repoName,
       pullRequestNumber,
-      `Hey there, thank you for opening a pull request! I've created a short summary of what I think this PR chenges:\n\n${summary}`
+      `Hey there, thank you for opening a pull request! I've created a short summary of what I think this PR changes:\n\n${summary}`
     );
   }
 })();
