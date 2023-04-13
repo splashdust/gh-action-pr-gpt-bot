@@ -11,14 +11,14 @@ inputs:
   openaiOrgId:
     description: "OpenAI Organization ID"
     required: true
-  githubContext:
-    description: "GitHub context"
+  githubEvent:
+    description: "GitHub webhook event"
     required: true
 runs:
   using: "docker"
   image: "Dockerfile"
   env:
-    GITHUB_EVENT: ${{ toJson(inputs.githubContext.event) }}
+    GITHUB_EVENT: ${{ toJson(inputs.githubEvent) }}
     GITHUB_TOKEN: ${{ inputs.token }}
     OPENAI_API_KEY: ${{ inputs.openaiApiKey }}
     OPENAI_ORG_ID: ${{ inputs.openaiOrgId }}
