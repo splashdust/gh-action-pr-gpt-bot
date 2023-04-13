@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+import { Octokit } from "@octokit/rest";
 
 import { fetchPullRequestDetails } from "./fetchPullRequestDetails.mjs";
 
