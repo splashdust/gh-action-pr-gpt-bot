@@ -10,8 +10,9 @@ const openai = new OpenAIApi(oaConfig);
 
 const token = process.env.GITHUB_TOKEN;
 console.log(process.env.GITHUB_CONTEXT);
-const { owner, repo, number } = JSON.parse(process.env.GITHUB_CONTEXT).payload
-  .pull_request;
+const { owner, repo, number } = JSON.parse(
+  process.env.GITHUB_CONTEXT
+).pull_request;
 
 (async () => {
   const pullRequestDetails = await fetchPullRequestDetails(
