@@ -27,16 +27,18 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           openaiApiKey: ${{ secrets.OPENAI_API_KEY }}
-          openaiOrgID: ${{ secrets.OPENAI_ORG_ID }}
+          openaiOrgId: ${{ secrets.OPENAI_ORG_ID }}
+          githubContext: ${{ toJson(github) }}
 ```
 
 ### Inputs
 
-| Name           | Description            | Required |
-| -------------- | ---------------------- | -------- |
-| `token`        | GitHub token           | Yes      |
-| `openaiApiKey` | OpenAI API key         | Yes      |
-| `openaiOrgId`  | OpenAI Organization ID | Yes      |
+| Name            | Description            | Required |
+| --------------- | ---------------------- | -------- |
+| `token`         | GitHub token           | Yes      |
+| `openaiApiKey`  | OpenAI API key         | Yes      |
+| `openaiOrgId`   | OpenAI Organization ID | Yes      |
+| `githubContext` | Github context object  | Yes      |
 
 ### Secrets
 
