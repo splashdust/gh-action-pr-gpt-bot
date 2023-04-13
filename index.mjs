@@ -11,11 +11,13 @@ const openai = new OpenAIApi(oaConfig);
 (async () => {
   const token = process.env.GITHUB_TOKEN;
   const context = JSON.parse(process.env.GITHUB_CONTEXT);
-  const owner = context.repository_owner;
-  const pullRequestNumber = context["event"].number;
-  const repoName = context.event.base.repo.name;
 
-  console.log(context);
+  console.log("context: ", process.env.GITHUB_CONTEXT);
+  console.log("parsed context: ", context);
+
+  const owner = context.repository_owner;
+  const pullRequestNumber = context.event.number;
+  const repoName = context.event.base.repo.name;
 
   const pullRequestDetails = await fetchPullRequestDetails(
     token,
