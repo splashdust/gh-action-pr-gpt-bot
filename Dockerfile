@@ -1,9 +1,9 @@
 FROM node:18
 
-WORKDIR /github/workspace
+WORKDIR /action
 
 COPY . .
 
 RUN npm ci
 
-ENTRYPOINT ["/github/workspace/entrypoint.sh"]
+ENTRYPOINT ["/action/entrypoint.sh"]
