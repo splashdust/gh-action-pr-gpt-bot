@@ -13,7 +13,7 @@ const openai = new OpenAIApi(oaConfig);
   console.log("context: ", process.env.GITHUB_CONTEXT);
 
   const ghctx = JSON.parse(process.env.GITHUB_CONTEXT);
-  console.log("parsed context: ", ghctx.event);
+  console.log("parsed context: ", ghctx);
 
   const owner = ghctx.repository_owner;
   const pullRequestNumber = ghctx.event.number;
