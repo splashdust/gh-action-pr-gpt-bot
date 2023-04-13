@@ -13,6 +13,8 @@ const openai = new OpenAIApi(oaConfig);
 
   const gh_event = JSON.parse(process.env.GITHUB_EVENT);
 
+  console.log("Just an object", { test: "hej", foo: 42 });
+
   console.log({ ...gh_event });
 
   const owner = "";

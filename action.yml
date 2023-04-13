@@ -18,7 +18,7 @@ runs:
   using: "docker"
   image: "Dockerfile"
   env:
-    GITHUB_EVENT: ${{ toJson(inputs.githubEvent) }}
+    GITHUB_EVENT: ${{ inputs.githubEvent }}
     GITHUB_TOKEN: ${{ inputs.token }}
     OPENAI_API_KEY: ${{ inputs.openaiApiKey }}
     OPENAI_ORG_ID: ${{ inputs.openaiOrgId }}
