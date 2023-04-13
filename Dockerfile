@@ -2,8 +2,11 @@ FROM node:18
 
 WORKDIR /action
 
+COPY package*.json ./
+RUN npm ci
+
 COPY . .
 
-RUN npm ci
+RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/action/entrypoint.sh"]
